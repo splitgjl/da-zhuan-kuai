@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>H5 打砖块 (Mobile)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>打砖块</h1>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="uiOverlay">
+            <div id="scoreBoard">得分: <span id="score">0</span></div>
+            <div id="livesBoard">生命: <span id="lives">3</span></div>
+        </div>
+        <div id="messageScreen" style="display: none;">
+             <h2 id="messageText"></h2>
+             <button id="restartButton">重新开始</button>
+        </div>
+    </div>
+    <div id="instructions">
+        <p>手指左右滑动屏幕底部来移动挡板</p>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 10px;
+    /* Prevent annoying pull-to-refresh or overscroll effects on mobile */
+    overscroll-behavior-y: contain;
+}
+
+h1 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#gameContainer {
+    position: relative; /* Needed for absolute positioning of overlays */
+    width: 95%;       /* Use percentage for responsiveness */
+    max-width: 400px; /* Max width to prevent becoming too wide on tablets/desktops */
+    margin: 0 auto;   /* Center the container */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+canvas {
+    display: block; /* Remove potential extra space below canvas */
+    width: 100%;    /* Make canvas fill the container width */
+    height: auto;   /* Maintain aspect ratio */
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+#uiOverlay {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    color: #333;
+    font-weight: bold;
+    pointer-events: none; /* Allow touches to go through to the canvas */
+}
+
+#messageScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #ccc;
+    display: none; /* Initially hidden */
+}
+
+#messageScreen h2 {
+    margin-top: 0;
+    color: #d9534f; /* Reddish color */
+}
+
+#messageScreen button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    background-color: #5cb85c; /* Greenish color */
+    color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+#messageScreen button:active { /* Basic pressed state for mobile */
+     background-color: #4cae4c;
+}
+
+#instructions {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
